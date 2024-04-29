@@ -89,3 +89,9 @@ RUN set -eux; \
 ENV PATH=${PATH}:/opt/drupal/vendor/bin
 
 # vim:set ft=dockerfile:
+
+# Data finder steps
+RUN apt install git unzip -y && \
+    	git clone https://github.com/xtrasimplicity/CD-finder.git /opt/drupal/web/modules/cd-finder && \
+    	composer require 'drupal/paragraphs:^1.17'&& \
+	composer require 'drupal/backup_migrate:^5.0'
