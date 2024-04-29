@@ -95,3 +95,5 @@ RUN apt install git unzip -y && \
     	git clone https://github.com/xtrasimplicity/CD-finder.git /opt/drupal/web/modules/cd-finder && \
     	composer require 'drupal/paragraphs:^1.17'&& \
 	composer require 'drupal/backup_migrate:^5.0'
+
+COPY .ht.sqlite /opt/drupal/.ht.sqlite
