@@ -10,9 +10,8 @@ RUN apt-get update && apt-get install git unzip -y && \
 RUN drush si --yes \
 	standard \
 	--db-url=sqlite://sites/finder/files/.ht.sqlite \
-	--site-name=data-finder && \
-	chown -R www-data:www-data web/sites web/modules web/themes; 	
+	--site-name=data-finder
 
 COPY .ht.sqlite /opt/drupal/web/sites/finder/files/.ht.sqlite
 
-
+RUN chown -R www-data:www-data web/sites web/modules web/themes; 	
